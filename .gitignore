@@ -1,1 +1,123 @@
-.env
+# ===================================
+# ENVIRONMENT & SECRETS (CRITICAL!)
+# ===================================
+.env                          # Environment variables dengan credentials
+.env.local                    # Local environment overrides
+.env.*.local                  # Environment-specific locals
+*.pem                         # Private keys
+*.key                         # Private keys
+*.p12                         # Certificate files
+secrets/                      # Folder untuk secrets
+.aws/                         # AWS credentials
+
+# ===================================
+# PYTHON
+# ===================================
+__pycache__/                  # Python cache
+*.py[cod]                     # Compiled Python
+*$py.class                    # Compiled Python
+*.so                          # C extensions
+.Python                       # Virtual env
+venv/                         # Python virtual environment
+env/                          # Alternative venv
+ENV/                          # Windows venv
+.venv                         # Another venv name
+pip-log.txt                   # Pip logs
+pip-delete-this-directory.txt # Pip cleanup
+.coverage                     # Coverage reports
+htmlcov/                      # Coverage HTML
+.pytest_cache/                # Pytest cache
+.mypy_cache/                  # Mypy cache
+.hypothesis/                  # Hypothesis cache
+*.egg-info/                   # Egg metadata
+dist/                         # Distribution builds
+build/                        # Build artifacts
+
+# ===================================
+# DATABASES (SENSITIVE!)
+# ===================================
+*.db                          # SQLite databases
+*.sqlite                      # SQLite
+*.sqlite3                     # SQLite3
+postgres_data/                # PostgreSQL volumes
+mysql_data/                   # MySQL volumes
+data/source/*.csv             # Generated sample data (optional - bisa di-track jika test data)
+data/backup/                  # Database backups
+*.sql.gz                      # Compressed SQL dumps
+*.sql.bak                      # Backup SQL files
+
+# ===================================
+# IDE & EDITOR
+# ===================================
+.vscode/                      # VS Code settings
+.idea/                        # JetBrains IDE
+.sublime-project              # Sublime Text
+.sublime-workspace            # Sublime Text
+*.swp                         # Vim swap
+*.swo                         # Vim swap
+*~                            # Backup files
+.DS_Store                     # macOS
+
+# ===================================
+# DBT
+# ===================================
+target/                       # dbt build output
+dbt_modules/                  # dbt dependencies
+dbt_packages/                 # dbt packages
+logs/                         # dbt logs
+.DBT_HISTORY                  # dbt history
+
+# ===================================
+# DOCKER
+# ===================================
+docker-compose.override.yml   # Local docker overrides
+*.log                         # Log files
+
+# ===================================
+# OPERATING SYSTEM
+# ===================================
+Thumbs.db                     # Windows thumbnail cache
+.DS_Store                     # macOS folder metadata
+.AppleDouble                  # macOS
+.LSOverride                   # macOS
+._*                           # macOS
+
+# ===================================
+# NODE (if applicable)
+# ===================================
+node_modules/                 # Node dependencies
+npm-debug.log                 # NPM logs
+yarn-error.log                # Yarn logs
+
+# ===================================
+# TEMPORARY & BUILD
+# ===================================
+*.tmp                         # Temporary files
+*.temp                        # Temporary files
+temp/                         # Temp folder
+.cache/                       # Cache folder
+dist/                         # Distribution
+build/                        # Build folder
+*.zip                         # Zip archives
+*.tar.gz                      # Compressed archives
+
+# ===================================
+# DOCUMENTATION ARTIFACTS (Optional)
+# ===================================
+site/                         # Generated documentation site
+docs/_build/                  # Sphinx build
+.sphinx/                      # Sphinx cache
+
+# ===================================
+# IDE WORKSPACE FILES
+# ===================================
+*.code-workspace              # VS Code workspace
+.project                      # Eclipse
+.classpath                    # Eclipse
+.c9/                          # Cloud9
+
+# ===================================
+# LOCAL OVERRIDES
+# ===================================
+.local/                       # Local user config
+.personalenv                  # Personal environment
