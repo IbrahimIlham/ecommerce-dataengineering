@@ -1,0 +1,131 @@
+[0m20:09:10.555224 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021646DDA060>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021644D2E990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021646BCA690>]}
+
+
+============================== 20:09:10.576244 | a0760a7c-5792-4fa4-a60f-281f11878b3f ==============================
+[0m20:09:10.576244 [info ] [MainThread]: Running with dbt=1.12.3
+[0m20:09:10.576244 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\ibrah\\.dbt', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt init ecommerce_dbt', 'log_path': 'logs'}
+[0m20:09:10.764797 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\ibrah\.dbt
+[0m20:09:10.781632 [debug] [MainThread]: Starter project path: C:\Users\ibrah\AppData\Roaming\Python\Python312\site-packages\dbt\include\starter_project
+[0m20:09:10.986249 [info ] [MainThread]: Setting up your profile.
+[0m20:12:46.693555 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+
+[0m20:12:46.883509 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\ibrah\AppData\Roaming\Python\Python312\site-packages\dbt\cli\requires.py", line 198, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ibrah\AppData\Roaming\Python\Python312\site-packages\dbt\cli\requires.py", line 144, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ibrah\AppData\Roaming\Python\Python312\site-packages\dbt\cli\main.py", line 504, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "C:\Users\ibrah\AppData\Roaming\Python\Python312\site-packages\dbt\task\init.py", line 363, in run
+    self.setup_profile(profile_name)
+  File "C:\Users\ibrah\AppData\Roaming\Python\Python312\site-packages\dbt\task\init.py", line 265, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "C:\Users\ibrah\AppData\Roaming\Python\Python312\site-packages\dbt\task\init.py", line 182, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "C:\Users\ibrah\AppData\Roaming\Python\Python312\site-packages\dbt\task\init.py", line 166, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ibrah\AppData\Roaming\Python\Python312\site-packages\dbt\task\init.py", line 132, in generate_target_from_input
+    target[key] = click.prompt(
+                  ^^^^^^^^^^^^^
+  File "C:\Users\ibrah\AppData\Roaming\Python\Python312\site-packages\click\termui.py", line 171, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ibrah\AppData\Roaming\Python\Python312\site-packages\click\termui.py", line 154, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m20:12:46.883509 [debug] [MainThread]: Command `dbt init` failed at 20:12:46.883509 after 217.46 seconds
+[0m20:12:46.883509 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002164719BEC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021648EC3020>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021648ED3C50>]}
+[0m20:12:46.888551 [debug] [MainThread]: Flushing usage events
+[0m20:12:50.599228 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:13:02.680577 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024C083C1CA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024C07B9F620>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024C08120C50>]}
+
+
+============================== 20:13:02.692155 | 4139f4b5-7b3b-4044-9b8b-61553300e884 ==============================
+[0m20:13:02.692155 [info ] [MainThread]: Running with dbt=1.12.3
+[0m20:13:02.700867 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\ibrah\\.dbt', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'invocation_command': 'dbt init ecommerce_dbt', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'logs'}
+[0m20:13:02.780444 [info ] [MainThread]: A project called ecommerce_dbt already exists here.
+[0m20:13:02.780444 [debug] [MainThread]: Command `dbt init` succeeded at 20:13:02.780444 after 0.54 seconds
+[0m20:13:02.780444 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024C09DEDB20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024C09F3FFB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024C09F3FF80>]}
+[0m20:13:02.780444 [debug] [MainThread]: Flushing usage events
+[0m20:13:04.903497 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:35:36.052124 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024710651E20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002470FFDD190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002471261F140>]}
+
+
+============================== 14:35:36.072308 | 786b8c5e-f1a4-4471-8119-23c81265ea57 ==============================
+[0m14:35:36.072308 [info ] [MainThread]: Running with dbt=1.12.3
+[0m14:35:36.072308 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\ibrah\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt debug', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'logs'}
+[0m14:35:36.164608 [info ] [MainThread]: dbt version: 1.12.3
+[0m14:35:36.165611 [info ] [MainThread]: python version: 3.12.9
+[0m14:35:36.168682 [info ] [MainThread]: python path: C:\Program Files\Python312\python.exe
+[0m14:35:36.208892 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m14:35:36.552513 [info ] [MainThread]: Using profiles dir at C:\Users\ibrah\.dbt
+[0m14:35:36.555605 [info ] [MainThread]: Using profiles.yml file at C:\Users\ibrah\.dbt\profiles.yml
+[0m14:35:36.557652 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\ibrah\OneDrive\Desktop\ecommerce-data-engineering\dbt_project.yml
+[0m14:35:36.560718 [info ] [MainThread]: adapter type: postgres
+[0m14:35:36.565789 [info ] [MainThread]: adapter version: 1.11.0
+[0m14:35:36.569892 [info ] [MainThread]: Configuration:
+[0m14:35:36.572157 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m14:35:36.573887 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m14:35:36.575887 [info ] [MainThread]: Required dependencies:
+[0m14:35:36.577886 [debug] [MainThread]: Executing "git --help"
+[0m14:35:36.776087 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:35:36.778089 [debug] [MainThread]: STDERR: "b''"
+[0m14:35:36.780087 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:35:36.782089 [info ] [MainThread]: Connection:
+[0m14:35:36.790091 [info ] [MainThread]:   host: 127.0.0.1
+[0m14:35:36.792089 [info ] [MainThread]:   port: 5432
+[0m14:35:36.794090 [info ] [MainThread]:   user: de_user
+[0m14:35:36.796087 [info ] [MainThread]:   database: ecommerce_dw
+[0m14:35:36.799087 [info ] [MainThread]:   schema: public
+[0m14:35:36.806327 [info ] [MainThread]:   connect_timeout: 10
+[0m14:35:36.809327 [info ] [MainThread]:   role: None
+[0m14:35:36.814326 [info ] [MainThread]:   search_path: None
+[0m14:35:36.818128 [info ] [MainThread]:   keepalives_idle: 0
+[0m14:35:36.821132 [info ] [MainThread]:   sslmode: None
+[0m14:35:36.823210 [info ] [MainThread]:   sslcert: None
+[0m14:35:36.826130 [info ] [MainThread]:   sslkey: None
+[0m14:35:36.827131 [info ] [MainThread]:   sslrootcert: None
+[0m14:35:36.829130 [info ] [MainThread]:   application_name: dbt
+[0m14:35:36.831132 [info ] [MainThread]:   autocommit: False
+[0m14:35:36.837560 [info ] [MainThread]:   retries: 1
+[0m14:35:36.844557 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m14:35:38.889018 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m14:35:39.202432 [debug] [MainThread]: Using postgres connection "debug"
+[0m14:35:39.202432 [debug] [MainThread]: On debug: select 1 as id
+[0m14:35:39.211087 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:35:39.519295 [debug] [MainThread]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "de_user"
+
+[0m14:35:39.595004 [debug] [MainThread]: Postgres adapter: Error running SQL: select 1 as id
+[0m14:35:39.595004 [debug] [MainThread]: Postgres adapter: Rolling back transaction.
+[0m14:35:39.595004 [debug] [MainThread]: On debug: No close available on handle
+[0m14:35:39.600046 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m14:35:39.602019 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m14:35:39.603813 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\ibrah\OneDrive\Desktop\ecommerce-data-engineering\dbt_project.yml> not found
+
+[0m14:35:39.604543 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "de_user"
+  
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m14:35:39.604543 [debug] [MainThread]: Command `dbt debug` failed at 14:35:39.604543 after 4.09 seconds
+[0m14:35:39.610999 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m14:35:39.611995 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024710651E20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024712749FD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024712C87020>]}
+[0m14:35:39.613994 [debug] [MainThread]: Flushing usage events
+[0m14:35:43.655587 [debug] [MainThread]: An error was encountered while trying to flush usage events
