@@ -1,0 +1,172 @@
+version: 2
+
+models:
+  - name: stg_payments
+    description: "Staging data pembayaran dari raw.payments"
+
+    columns:
+      - name: payment_id
+        description: "ID unik pembayaran"
+        tests:
+          - not_null
+          - unique
+
+      - name: order_id
+        description: "ID order yang terkait dengan pembayaran"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_orders')
+                field: order_id
+
+      - name: payment_status
+        description: "Status pembayaran"
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - paid
+                  - failed
+                  - pending
+                  - refunded
+
+  - name: stg_orders
+    description: "Staging data order dari raw.orders"
+
+    columns:
+      - name: order_id
+        description: "ID unik order"
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        description: "ID customer yang membuat order"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
+
+      - name: order_date
+        description: "Tanggal dan waktu order"
+        tests:
+          - not_null
+
+      - name: total_amount
+        description: "Total nilai order"
+        tests:
+          - not_null
+
+      - name: status
+        description: "Status order"
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - completed
+                  - pending
+                  - cancelled
+                  - failed
+
+  - name: stg_customers
+    description: "Staging data customer dari raw.customers"
+
+    columns:
+      - name: customer_id
+        description: "ID unik customer"
+        tests:
+          - not_null
+          - unique
+
+      - name: first_name
+        description: "Nama depan customer"
+        tests:
+          - not_null
+
+      - name: email
+        description: "Alamat email customer"
+        tests:
+          - not_null
+
+      - name: created_at
+        description: "Tanggal dan waktu pembuatan data customer"
+        tests:
+          - not_null
+
+  - name: stg_products
+    description: "Staging data produk dari raw.products"
+
+    columns:
+      - name: product_id
+        description: "ID unik produk"
+        tests:
+          - not_null
+          - unique
+
+      - name: product_name
+        description: "Nama produk"
+        tests:
+          - not_null
+
+      - name: category
+        description: "Kategori produk"
+        tests:
+          - not_null
+
+      - name: price
+        description: "Harga produk"
+        tests:
+          - not_null
+
+      - name: created_at
+        description: "Tanggal dan waktu pembuatan data produk"
+        tests:
+          - not_null
+
+  - name: stg_order_items
+    description: "Staging data item order dari raw.order_items"
+
+    columns:
+      - name: order_item_id
+        description: "ID unik item order"
+        tests:
+          - not_null
+          - unique
+
+      - name: order_id
+        description: "ID order yang memiliki item"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_orders')
+                field: order_id
+
+      - name: product_id
+        description: "ID produk yang dibeli"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_products')
+                field: product_id
+
+      - name: quantity
+        description: "Jumlah produk yang dibeli"
+        tests:
+          - not_null
+
+      - name: unit_price
+        description: "Harga satuan produk"
+        tests:
+          - not_null
+
+      - name: item_amount
+        description: "Total nilai item, yaitu quantity dikali unit_price"
+        tests:
+          - not_null

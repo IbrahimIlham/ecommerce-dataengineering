@@ -38,3 +38,7 @@ models:
     staging:
       +schema: staging
       +materialized: view
+
+    analytics:
+      +schema: analytics
+      +materialized: view

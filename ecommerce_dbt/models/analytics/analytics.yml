@@ -1,0 +1,171 @@
+version: 2
+
+models:
+  - name: fact_orders
+    description: "Fact table order, dengan grain satu baris untuk satu order"
+
+    columns:
+      - name: order_id
+        description: "ID unik order"
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        description: "ID customer yang membuat order"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_customers')
+                field: customer_id
+
+      - name: order_date
+        description: "Tanggal order"
+        tests:
+          - not_null
+
+      - name: total_amount
+        description: "Total nilai order"
+        tests:
+          - not_null
+
+      - name: status
+        description: "Status order"
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - completed
+                  - pending
+                  - cancelled
+                  - failed
+
+  - name: fact_order_items
+    description: "Fact table item order, dengan grain satu baris untuk satu item dalam satu order"
+
+    columns:
+      - name: order_item_id
+        description: "ID unik item order"
+        tests:
+          - not_null
+          - unique
+
+      - name: order_id
+        description: "ID order yang memiliki item"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('fact_orders')
+                field: order_id
+
+      - name: customer_id
+        description: "ID customer yang melakukan order"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_customers')
+                field: customer_id
+
+      - name: product_id
+        description: "ID produk yang dibeli"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_products')
+                field: product_id
+
+      - name: quantity
+        description: "Jumlah produk yang dibeli"
+        tests:
+          - not_null
+
+      - name: unit_price
+        description: "Harga satuan produk"
+        tests:
+          - not_null
+
+      - name: item_amount
+        description: "Total nilai item, yaitu quantity dikali unit_price"
+        tests:
+          - not_null
+
+  - name: dim_customers
+    description: "Dimension customer dengan grain satu baris untuk satu customer"
+
+    columns:
+      - name: customer_id
+        description: "ID unik customer"
+        tests:
+          - not_null
+          - unique
+
+      - name: full_name
+        description: "Nama lengkap customer"
+        tests:
+          - not_null
+
+      - name: email
+        description: "Email customer"
+        tests:
+          - not_null
+          - unique
+
+      - name: gender
+        description: "Jenis kelamin customer"
+        tests:
+          - not_null
+
+      - name: date_of_birth
+        description: "Tanggal lahir customer"
+        tests:
+          - not_null
+
+      - name: city
+        description: "Kota customer"
+        tests:
+          - not_null
+
+      - name: created_at
+        description: "Tanggal dan waktu customer dibuat"
+        tests:
+          - not_null
+
+  - name: dim_products
+    description: "Dimension product dengan grain satu baris untuk satu product"
+
+    columns:
+      - name: product_id
+        description: "ID unik produk"
+        tests:
+          - not_null
+          - unique
+
+      - name: product_name
+        description: "Nama produk"
+        tests:
+          - not_null
+
+      - name: category
+        description: "Kategori produk"
+        tests:
+          - not_null
+
+      - name: price
+        description: "Harga produk"
+        tests:
+          - not_null
+
+      - name: stock_quantity
+        description: "Jumlah stok produk"
+        tests:
+          - not_null
+
+      - name: created_at
+        description: "Tanggal dan waktu produk dibuat"
+        tests:
+          - not_null
