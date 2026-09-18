@@ -1,5 +1,7 @@
 # E-Commerce Data Engineering Project
 
+# Stop-Service -Name postgresql-x64-18
+
 Proyek data engineering untuk pipeline ETL e-commerce dengan PostgreSQL, Python, dan dbt.
 
 ## Daftar Isi
